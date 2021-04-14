@@ -14,5 +14,7 @@ Par défaut, les matrices A et b sont nulles
 Forme attendue : 
 
   A = [[a,b,c],[e,f,g]]
+  
   b = [b1,b2]
+  
   c = [c1,c2,c3]
