@@ -46,7 +46,7 @@ def FourierMotzkin(A,b,c):
     bornes_courantes = BORNES[q-1]
     min_possibles = bornes_courantes[0]
 
-    #Au début de la rémontée, u est minoré par des formes affines constantes. 
+    #Au début de la remontée, u est minoré par des formes affines constantes. 
     #Par exemple, si on a effectué le changement de variable u=x, y=y et z=z, cela donne :
     #       u <= max ( 0*z + 0*y + 0*u + c_i) et u >=  min ( 0*z + 0*y + 0*u + c_j)
 
