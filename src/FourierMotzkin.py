@@ -8,17 +8,21 @@ def FourierMotzkin(A,b,c):
         c définissant les coefficients de la fonction affine c1x1+...+cnxn
         x_i>=0 pour tout i
     """
-    #Concaténation et réduction des matrices A et b
-    A = FM1(A,b)
-    A = FM2(A)
-
     #nombre de variables
     q=len(c)
-
-    #ajout des contraintes x_j>0 à la matrice A des contraintes linéaires
     ones=-1*np.eye(q)
-    ones=np.column_stack((ones,[0 for i in range(q)]))
-    A=np.row_stack((A,ones))
+
+    #Concaténation et réduction des matrices A et b + ajout des contraintes x_j>0 à la matrice A des contraintes linéaires
+    if A is not None:
+        p = np.shape(A)[0]
+        if b is None: b = np.zeros((p,1))
+        ones=np.column_stack((ones,[0 for i in range(q)]))
+        A = FM1(A,b)
+        A = FM2(A)
+        A=np.row_stack((A,ones))
+
+    else:
+        A = ones
 
     #changement de variable u=f(x,y,z)
     var_changee=0
