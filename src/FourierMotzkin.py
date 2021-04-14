@@ -1,5 +1,5 @@
 import numpy as np
-from miscfun import *
+from .miscfun import *
 
 def FourierMotzkin(A,b,c):
     """
@@ -66,7 +66,7 @@ def FourierMotzkin(A,b,c):
         else :
             extrema_possibles = bornes_courantes[1]
             inf = min( [  sum(   [ bornes_inf[j] * extrema_possibles[i][j] for j in range(q) ]  ) + extrema_possibles[i][q] for i in range(len(extrema_possibles))  ] )
-        #extrema_possibles[i][q] correspondant à la constante apparaissant dans la forme affine bornant la variable
+        #extrema_possibles[i][q] correspond à la constante apparaissant dans la forme affine bornant la variable
         
         bornes_inf[k] = inf
 
